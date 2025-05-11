@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  completed: boolean;
-  createdAt: Date;
-}
+import type { Task } from "../../types/types";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,10 +12,16 @@ export default function TaskList() {
   }, []);
 
   return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id}>{task.title}</li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {tasks.map((task) => (
+          <li className="flex gap-2" key={task.id}>
+            <p>{task.id}</p>
+            <p>{task.title}</p>
+          </li>
+        ))}
+      </ul>
+      {/* <div>{JSON.stringify(tasks)}</div> */}
+    </div>
   );
 }

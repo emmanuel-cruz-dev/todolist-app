@@ -1,12 +1,13 @@
-import TaskList from "./components/TaskList";
+import Footer from "./components/layout/Footer/Footer";
+import Header from "./components/layout/Navbar/Header";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
     <>
-      <article className="p-4 px-6">
-        <h1 className="text-3xl mb-4">Lista de tareas</h1>
-        <TaskList />
-      </article>
+      <Header />
+      <AppRouter />
+      <Footer />
     </>
   );
 }
