@@ -5,13 +5,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const tasks = require("./tasks.json");
 const { validateTask, validatePartialTask } = require("./schemas/tasks");
-const { error } = require("console");
 
 app.use(cors());
 app.use(express.json());
 app.disable("x-powered-by");
 
-// Entrada
+// Home
 app.get("/", (req, res) => {
   res.send(`
     <h1>Bienvenido Mundo!</h1>
@@ -78,20 +77,17 @@ app.patch("/api/tasks/:id", (req, res) => {
 // Eliminar una tarea
 app.delete("/api/tasks/:id", (req, res) => {
   const { id } = req.params;
-  const index = tasks.findIndex((t) => t.id === Number(id));
-  if (index === -1)
+  const taskIndex = tasks.findIndex((task) => task.id == id);
+
+  if (taskIndex === -1)
     return res.status(404).json({ error: "No se encontró la tarea." });
 
-  tasks.splice(index, 1);
-  // res.json(tasks);
-  // res.status(204).end();
+  tasks.splice(taskIndex, 1);
 
-  res.send(`
-    <h1>Tarea eliminada exitosamente</h1>
-    <div>${JSON.stringify(tasks)}</div>
-    `);
+  return res.json({ message: "Tarea eliminada." });
 });
 
+// Manejo Not Found 404
 app.use((req, res) => {
   res.status(404).send(`
     <h1>404</h1>
