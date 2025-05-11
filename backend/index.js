@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.disable("x-powered-by");
 
 let tasks = [
   { id: 1, title: "Aprender React", completed: false },
@@ -14,8 +15,7 @@ let tasks = [
 
 // Entrada
 app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  res.end(`
+  res.send(`
     <h1>Bienvenido Mundo!</h1>
     <p>Esta es mi API de prueba, App Lista de Tareas.</p>
     <p>Para ver la lista de tareas dirígete a este <a href="http://localhost:3000/api/tasks">link</a>.</p>
@@ -57,10 +57,16 @@ app.delete("/api/tasks/:id", (req, res) => {
   // res.json(tasks);
   // res.status(204).end();
 
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  res.end(`
+  res.send(`
     <h1>Tarea eliminada exitosamente</h1>
     <div>${JSON.stringify(tasks)}</div>
+    `);
+});
+
+app.use((req, res) => {
+  res.status(404).send(`
+    <h1>404</h1>
+    <p>Para ver la lista de tareas dirígete a este <a href="http://localhost:3000/api/tasks">link</a>.</p>
     `);
 });
 
