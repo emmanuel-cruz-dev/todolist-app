@@ -12,7 +12,7 @@ GET http://localhost:3000/api/tasks/1
 POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
-{ "id": 4, "title": "Crear una aplicación con Express", "completed": false }
+{"title": "1", "completed" : "true"}
 
 ### Actualizar una tarea existente
 PUT http://localhost:3000/api/tasks/2

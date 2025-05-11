@@ -1,8 +1,11 @@
 const express = require("express");
+const crypto = require("crypto");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const tasks = require("./tasks.json");
+const { validateTask } = require("./schemas/tasks");
+const { error } = require("console");
 
 app.use(cors());
 app.use(express.json());
@@ -32,10 +35,19 @@ app.get("/api/tasks/:id", (req, res) => {
 
 // Crear una nueva tarea
 app.post("/api/tasks", (req, res) => {
-  const newTask = { id: Date.now(), ...req.body };
+  const result = validateTask(req.body);
+
+  if (result.error) {
+    return res.status(400).json({ error: JSON.parse(result.error.message) });
+  }
+
+  const newTask = {
+    id: crypto.randomUUID(),
+    ...result.data,
+  };
+
   tasks.push(newTask);
   res.status(201).json(newTask);
-  // res.status(201).json(tasks);
 });
 
 // Actualizar una tarea existente
