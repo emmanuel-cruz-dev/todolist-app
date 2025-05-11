@@ -1,5 +1,5 @@
 function TaskPage() {
-  return <div>Tarea individual</div>;
+  return <main className="container">Tarea individual</main>;
 }
 
 export default TaskPage;

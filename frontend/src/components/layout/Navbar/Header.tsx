@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="p-6 py-4">
-      <nav className="font-semibold text-lg">
-        <ul className="flex gap-4">
+    <header className="bg-blue-100 font-semibold text-lg flex justify-between p-6 py-5">
+      <Link
+        className="hover:text-blue-600 transition-colors duration-300"
+        to="/"
+        title="Home"
+      >
+        ForIT | TODO App
+      </Link>
+      <nav>
+        <ul className="flex gap-6 [&>li>a]:hover:text-blue-600 [&>li>a]:transition-colors [&>li>a]:duration-300">
           <li>
             <Link to="/">Lista de tareas</Link>
           </li>

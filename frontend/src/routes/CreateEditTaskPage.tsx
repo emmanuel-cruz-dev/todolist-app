@@ -1,5 +1,5 @@
 function CreateEditTaskPage() {
-  return <div>Crear/editar una tarea</div>;
+  return <main className="container">Crear/editar una tarea</main>;
 }
 
 export default CreateEditTaskPage;

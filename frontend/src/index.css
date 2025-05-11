@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+.container {
+  background-color: #f0f0f0;
+  min-height: calc(100vh - 132px);
+  padding: 1rem 1.5rem;
+}
+
+.btn {
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
