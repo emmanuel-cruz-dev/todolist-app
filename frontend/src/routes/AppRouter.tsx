@@ -7,8 +7,8 @@ function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<TaskListPage />} />
-      <Route path="/task-item" element={<TaskPage />} />
-      <Route path="/task-form" element={<CreateEditTaskPage />} />
+      <Route path="/task-item/:id" element={<TaskPage />} />
+      <Route path="/task-form/:id" element={<CreateEditTaskPage />} />
       <Route path="*" element={<TaskListPage />} />
     </Routes>
   );

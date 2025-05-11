@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-blue-100 font-semibold text-lg flex justify-between p-6 py-5">
+    <header className="bg-blue-100 font-semibold text-lg sm:text-xl flex justify-between py-4 px-2 md:py-5 md:px-6">
       <Link
         className="hover:text-blue-600 transition-colors duration-300"
         to="/"
@@ -14,12 +14,6 @@ function Header() {
         <ul className="flex gap-6 [&>li>a]:hover:text-blue-600 [&>li>a]:transition-colors [&>li>a]:duration-300">
           <li>
             <Link to="/">Lista de tareas</Link>
-          </li>
-          <li>
-            <Link to="/task-item">Tarea individual</Link>
-          </li>
-          <li>
-            <Link to="/task-form">Crear/editar tarea</Link>
           </li>
         </ul>
       </nav>

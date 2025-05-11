@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
+/* Clases globales */
+
 .container {
+  margin: 0 auto;
   background-color: #f0f0f0;
   min-height: calc(100vh - 132px);
-  padding: 1rem 1.5rem;
 }
 
 .btn {
