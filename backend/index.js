@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const tasks = require("./tasks.json");
-const { validateTask } = require("./schemas/tasks");
+const { validateTask, validatePartialTask } = require("./schemas/tasks");
 const { error } = require("console");
 
 app.use(cors());
@@ -51,14 +51,28 @@ app.post("/api/tasks", (req, res) => {
 });
 
 // Actualizar una tarea existente
-app.put("/api/tasks/:id", (req, res) => {
-  const { id } = req.params;
-  const index = tasks.findIndex((t) => t.id === Number(id));
-  if (index === -1)
-    return res.status(404).json({ error: "No se encontró la tarea." });
+app.patch("/api/tasks/:id", (req, res) => {
+  const result = validatePartialTask(req.body);
 
-  tasks[index] = { ...tasks[index], ...req.body };
-  res.json(tasks[index]);
+  if (!result.success) {
+    return res.status(400).json({ error: JSON.parse(result.error.message) });
+  }
+
+  const { id } = req.params;
+  const taskIndex = tasks.findIndex((task) => task.id == id);
+
+  if (taskIndex == -1) {
+    return res.status(404).json({ message: "No se encontró la tarea." });
+  }
+
+  const updateTask = {
+    ...tasks[taskIndex],
+    ...result.data,
+  };
+
+  tasks[taskIndex] = updateTask;
+
+  return res.json(updateTask);
 });
 
 // Eliminar una tarea

@@ -12,10 +12,19 @@ GET http://localhost:3000/api/tasks/1
 POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
-{"title": "1", "completed" : "true"}
+{
+  "title": "1",
+  "marco" : true
+}
 
 ### Actualizar una tarea existente
-PUT http://localhost:3000/api/tasks/2
+PATCH  http://localhost:3000/api/tasks/3
+Content-Type: application/json
+
+{
+  "title" : "Actualizado desde patch.",
+  "completed": true
+}
 
 ### Eliminar una tarea
 DELETE http://localhost:3000/api/tasks/3

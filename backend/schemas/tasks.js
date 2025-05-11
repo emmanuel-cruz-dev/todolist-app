@@ -5,15 +5,22 @@ const taskSchema = z.object({
     invalid_type_error: "Task title must be a string.",
     required_error: "Task title is required.",
   }),
-  completed: z.boolean({
-    required_error: "Completed is required.",
-    message: "Completed must be a boolean.",
-  }),
+  completed: z
+    .boolean({
+      message: "Completed must be a boolean.",
+    })
+    .default(false),
 });
 
 function validateTask(object) {
   return taskSchema.safeParse(object);
 }
+
+function validatePartialTask(object) {
+  return taskSchema.partial().safeParse(object);
+}
+
 module.exports = {
   validateTask,
+  validatePartialTask,
 };
