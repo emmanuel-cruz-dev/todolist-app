@@ -43,6 +43,7 @@ app.post("/api/tasks", (req, res) => {
   const newTask = {
     id: crypto.randomUUID(),
     ...result.data,
+    createdAt: new Date().toISOString(),
   };
 
   tasks.push(newTask);

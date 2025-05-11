@@ -1,5 +1,30 @@
 [
-  { "id": 1, "title": "Aprender React", "completed": false },
-  { "id": 2, "title": "Crear una API con Express", "completed": false },
-  { "id": 3, "title": "Aprender TypeScript", "completed": false }
+  {
+    "id": "1",
+    "title": "Implementar autenticación JWT",
+    "description": "Configurar sistema de autenticación con JSON Web Tokens en el backend Node.js",
+    "completed": false,
+    "createdAt": "2023-05-10T09:15:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Optimizar rendimiento React",
+    "description": "Aplicar memoización, useCallback y React.memo para mejorar renderizados",
+    "completed": true,
+    "createdAt": "2023-05-05T14:30:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Diseñar sistema de componentes UI",
+    "description": "Crear biblioteca de componentes reutilizables en Storybook para el frontend",
+    "completed": false,
+    "createdAt": "2023-05-08T11:20:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Migrar API REST a GraphQL",
+    "description": "Refactorizar endpoints existentes para implementar schema de GraphQL con Apollo Server",
+    "completed": false,
+    "createdAt": "2023-05-01T16:45:00Z"
+  }
 ]

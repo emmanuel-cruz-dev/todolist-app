@@ -5,6 +5,10 @@ const taskSchema = z.object({
     invalid_type_error: "Task title must be a string.",
     required_error: "Task title is required.",
   }),
+  description: z.string({
+    invalid_type_error: "Task description must be a string.",
+    required_error: "Task description is required.",
+  }),
   completed: z
     .boolean({
       message: "Completed must be a boolean.",
