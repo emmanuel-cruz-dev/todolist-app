@@ -25,7 +25,9 @@ app.get("/api/tasks", (req, res) => {
 // Obtener una tarea por id
 app.get("/api/tasks/:id", (req, res) => {
   const { id } = req.params;
-  res.send(tasks[id - 1]);
+  const task = tasks.find((task) => task.id == id);
+  if (task) return res.json(task);
+  res.status(404).json({ error: "No se encontró la tarea." });
 });
 
 // Crear una nueva tarea
