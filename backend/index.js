@@ -2,16 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const tasks = require("./tasks.json");
 
 app.use(cors());
 app.use(express.json());
 app.disable("x-powered-by");
-
-let tasks = [
-  { id: 1, title: "Aprender React", completed: false },
-  { id: 2, title: "Crear una API con Express", completed: false },
-  { id: 3, title: "Aprender TypeScript", completed: false },
-];
 
 // Entrada
 app.get("/", (req, res) => {
@@ -25,6 +20,12 @@ app.get("/", (req, res) => {
 // Obtener todas las tareas
 app.get("/api/tasks", (req, res) => {
   res.json(tasks);
+});
+
+// Obtener una tarea por id
+app.get("/api/tasks/:id", (req, res) => {
+  const { id } = req.params;
+  res.send(tasks[id - 1]);
 });
 
 // Crear una nueva tarea
