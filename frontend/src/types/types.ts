@@ -5,5 +5,10 @@ export interface Task {
   title: string;
   description: string;
   completed: boolean;
-  createdAt: ReactNode;
+  createdAt?: ReactNode;
 }
+
+export type TaskFormProps = {
+  task?: Task;
+  onSave: (task: Task) => void;
+};

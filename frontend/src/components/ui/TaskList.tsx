@@ -1,37 +1,18 @@
 import { useEffect, useState } from "react";
 import type { Task } from "../../types/types";
 import { Link } from "react-router-dom";
+import { deleteTask, getTasks } from "../../services/api";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/tasks")
-      .then((res) => {
-        if (!res.ok) throw new Error("Error al obtener las tareas.");
-        return res.json();
-      })
-      .then((data) => setTasks(data))
-      .catch((err) => {
-        setError(err.message);
-        console.error(error);
-      });
+    getTasks().then(setTasks).catch(console.error);
   }, []);
 
-  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const item = e.currentTarget.closest("li");
-    const id = item?.dataset.id;
-
-    if (!id) return;
-
-    fetch(`http://localhost:3000/api/tasks/${id}`, {
-      method: "DELETE",
-    }).then((res) => {
-      if (res.ok) {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
-      }
-    });
+  const handleDelete = (id: string) => {
+    deleteTask(id);
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   return (
@@ -46,7 +27,17 @@ export default function TaskList() {
             >
               <header className="mb-6">
                 <h2 className="mb-2 font-semibold text-lg">{task.title}</h2>
-                <p className="text-gray-800 line-clamp-2">{task.description}</p>
+                <p className="mb-2 text-gray-800 line-clamp-2">
+                  {task.description}
+                </p>
+                <p className="[&>span]:font-medium">
+                  Estado:{" "}
+                  {task.completed === false ? (
+                    <span>Incompleta</span>
+                  ) : (
+                    <span>Completada</span>
+                  )}
+                </p>
               </header>
               <footer className="flex gap-3 justify-end">
                 <Link
@@ -62,7 +53,7 @@ export default function TaskList() {
                   Editar
                 </Link>
                 <button
-                  onClick={handleDelete}
+                  onClick={() => handleDelete(task.id)}
                   className="btn bg-black hover:bg-red-600"
                 >
                   Eliminar

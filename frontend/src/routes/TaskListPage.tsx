@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TaskList from "../components/ui/TaskList";
 
 function TaskListPage() {
@@ -8,9 +9,9 @@ function TaskListPage() {
           <h1 className="text-xl sm:text-3xl mb-4 font-semibold">
             Lista de tareas
           </h1>
-          <button className="btn bg-blue-600 hover:bg-blue-800">
+          <Link to="/new" className="btn bg-blue-600 hover:bg-blue-800">
             Agregar nueva tarea
-          </button>
+          </Link>
         </header>
         <TaskList />
       </article>

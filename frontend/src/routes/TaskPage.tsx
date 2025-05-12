@@ -15,8 +15,8 @@ function TaskPage() {
 
   return (
     <main className="container">
-      <article className="flex flex-col items-center py-4 w-full">
-        <header className="flex justify-between items-center w-2/3 py-4">
+      <article className="flex flex-col items-center py-4 w-2/4 mx-auto">
+        <header className="flex justify-between items-center py-4 w-full">
           <h1 className="text-3xl mb-4 font-semibold">Tarea individual</h1>
           <Link
             to={`/task-form/${task?.id}`}
@@ -25,9 +25,17 @@ function TaskPage() {
             Editar tarea
           </Link>
         </header>
-        <article className="w-2/3">
+        <article className="w-full">
           <h3 className="text-xl mb-4">{task?.title}</h3>
-          <p>{task?.description}</p>
+          <p className="mb-2">{task?.description}</p>
+          <p className="[&>span]:font-medium">
+            Estado:{" "}
+            {task?.completed === false ? (
+              <span>Incompleta</span>
+            ) : (
+              <span>Completada</span>
+            )}
+          </p>
         </article>
       </article>
     </main>
