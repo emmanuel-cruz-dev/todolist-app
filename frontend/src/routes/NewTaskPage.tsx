@@ -8,7 +8,6 @@ function NewTaskPage() {
     <main className="container">
       <article className="flex flex-col items-center py-4 w-2/3 mx-auto">
         <h2>Nueva tarea</h2>
-        {/* <TaskForm onSave={handleSave} /> */}
         <TaskForm onSave={saveTask} />
       </article>
     </main>
