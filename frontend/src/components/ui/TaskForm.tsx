@@ -12,29 +12,6 @@ function TaskForm({ task, onSave }: TaskFormProps) {
     onSave({ title, description, completed });
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   const method = task ? "PATCH" : "POST";
-  //   const url = task
-  //     ? `http://localhost:3000/api/tasks/${task.id}`
-  //     : "http://localhost:3000/api/tasks";
-
-  //   const response = await fetch(url, {
-  //     method,
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ title, description, completed }),
-  //   });
-
-  //   if (!response.ok) {
-  //     console.error("Error al guardar tarea");
-  //     return;
-  //   }
-
-  //   const data = await response.json();
-  //   onSave(data);
-  // };
-
   return (
     <form className="flex flex-col gap-4 w-2/5" onSubmit={handleSubmit}>
       <div className="flex flex-col">
