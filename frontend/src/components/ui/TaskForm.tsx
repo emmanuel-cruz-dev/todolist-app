@@ -14,7 +14,7 @@ function TaskForm({ task, onSave }: TaskFormProps) {
 
   return (
     <form
-      className="bg-white p-6 rounded-2xl flex flex-col gap-4 w-2/5 mb-4 shadow-xl"
+      className="bg-white p-6 rounded-2xl flex flex-col gap-4 w-11/12 md:w-2/3 lg:w-2/5 mb-4 shadow-xl"
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col">
@@ -29,7 +29,7 @@ function TaskForm({ task, onSave }: TaskFormProps) {
       <div className="flex flex-col">
         <label className="font-semibold text-lg">Descripción:</label>
         <textarea
-          className="bg-gray-100 rounded-lg p-2 px-3 mt-2"
+          className="bg-gray-100 rounded-lg p-2 px-3 mt-2 h-28 sm:h-auto"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Agrega una descripción"

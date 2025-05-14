@@ -6,9 +6,11 @@
   margin: 0 auto;
   background-color: #f0f0f0;
   min-height: calc(100vh - 132px);
+  min-width: 100% !important;
 }
 
 .btn {
+  display: block;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;

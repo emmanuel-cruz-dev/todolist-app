@@ -15,8 +15,8 @@ function TaskPage() {
 
   return (
     <main className="container">
-      <article className="flex flex-col items-center py-4 w-2/4 mx-auto">
-        <header className="flex justify-between items-center py-4 w-full">
+      <article className="flex flex-col items-center py-4 w-11/12 md:w-2/4 mx-auto">
+        <header className="flex flex-col md:flex-row justify-between items-center py-4 w-full">
           <h1 className="text-3xl mb-4 font-semibold">Tarea individual</h1>
           <Link
             to={`/task-form/${task?.id}`}

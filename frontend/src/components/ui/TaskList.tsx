@@ -31,8 +31,8 @@ export default function TaskList() {
                   {task.description}
                 </p>
               </header>
-              <footer className="flex justify-between items-center">
-                <p className="[&>span]:bg-gray-200 [&>span]:py-2 [&>span]:px-3 [&>span]:rounded-lg [&>span]:font-medium">
+              <footer className="flex justify-between items-center gap-2 text-sm xl:text-base">
+                <p className="[&>span]:block [&>span]:bg-gray-200 [&>span]:py-2 [&>span]:px-3 [&>span]:rounded-lg [&>span]:font-medium">
                   {task.completed === false ? (
                     <span>Incompleta</span>
                   ) : (
