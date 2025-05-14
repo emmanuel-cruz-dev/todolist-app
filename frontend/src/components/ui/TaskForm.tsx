@@ -14,13 +14,13 @@ function TaskForm({ task, onSave }: TaskFormProps) {
 
   return (
     <form
-      className="bg-white p-6 rounded-2xl flex flex-col gap-4 w-2/5 mb-4"
+      className="bg-white p-6 rounded-2xl flex flex-col gap-4 w-2/5 mb-4 shadow-xl"
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col">
         <label className="font-semibold text-lg">Título:</label>
         <input
-          className="bg-gray-100 rounded-lg p-2 mt-2"
+          className="bg-gray-100 rounded-lg p-2 px-3 mt-2"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Agrega un título"
@@ -29,7 +29,7 @@ function TaskForm({ task, onSave }: TaskFormProps) {
       <div className="flex flex-col">
         <label className="font-semibold text-lg">Descripción:</label>
         <textarea
-          className="bg-gray-100 rounded-lg p-2 mt-2"
+          className="bg-gray-100 rounded-lg p-2 px-3 mt-2"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Agrega una descripción"
@@ -37,7 +37,7 @@ function TaskForm({ task, onSave }: TaskFormProps) {
       </div>
       {task && (
         <div className="flex justify-between items-center my-3">
-          <p className="[&>span]:bg-gray-100 [&>span]:p-2 [&>span]:rounded-lg  [&>span]:font-medium">
+          <p className="[&>span]:bg-gray-100 [&>span]:p-2 [&>span]:px-3 [&>span]:rounded-lg [&>span]:font-medium">
             {task?.completed === false ? (
               <span>Incompleta</span>
             ) : (
