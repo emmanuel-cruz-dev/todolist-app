@@ -10,9 +10,8 @@
 
 .btn {
   font-weight: 500;
-  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

@@ -16,13 +16,13 @@ export default function TaskList() {
   };
 
   return (
-    <article className="w-11/12 lg:w-2/3">
+    <article className="w-11/12 lg:w-3/4 mb-6">
       {tasks.length > 0 ? (
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {tasks.map((task) => (
             <li
               data-id={task.id}
-              className="h-fit bg-sky-200 p-4 rounded-2xl gap-2"
+              className="h-fit bg-white p-4 px-5 rounded-2xl gap-2 shadow-xl"
               key={task.id}
             >
               <header className="mb-6">
@@ -30,34 +30,48 @@ export default function TaskList() {
                 <p className="mb-2 text-gray-800 line-clamp-2">
                   {task.description}
                 </p>
-                <p className="[&>span]:font-medium">
-                  Estado:{" "}
+                {/* <p className="[&>span]:bg-gray-200 [&>span]:py-2 [&>span]:px-2 [&>span]:rounded-lg [&>span]:font-medium">
+                  {task.completed === false ? (
+                    <span>Incompleta</span>
+                  ) : (
+                    <span>Completada</span>
+                  )}
+                </p> */}
+              </header>
+              <footer className="flex justify-between items-center">
+                <p className="[&>span]:bg-gray-200 [&>span]:py-2 [&>span]:px-2 [&>span]:rounded-lg [&>span]:font-medium">
                   {task.completed === false ? (
                     <span>Incompleta</span>
                   ) : (
                     <span>Completada</span>
                   )}
                 </p>
-              </header>
-              <footer className="flex gap-3 justify-end">
-                <Link
-                  to={`/task-item/${task.id}`}
-                  className="btn bg-gray-600 hover:bg-gray-800"
-                >
-                  Ver
-                </Link>
-                <Link
-                  to={`/task-form/${task.id}`}
-                  className="btn bg-blue-600 hover:bg-blue-800"
-                >
-                  Editar
-                </Link>
-                <button
-                  onClick={() => handleDelete(task.id)}
-                  className="btn bg-black hover:bg-red-600"
-                >
-                  Eliminar
-                </button>
+                <ul className="flex items-center gap-2 [&>li>a]:bg-gray-200 [&>li>a]:text-black [&>li>a]:hover:text-white">
+                  <li>
+                    <Link
+                      to={`/task-item/${task.id}`}
+                      className="btn hover:bg-black"
+                    >
+                      Ver
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={`/task-form/${task.id}`}
+                      className="btn hover:bg-blue-600"
+                    >
+                      Editar
+                    </Link>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => handleDelete(task.id)}
+                      className="btn bg-gray-200 text-black hover:text-white hover:bg-red-600"
+                    >
+                      Eliminar
+                    </button>
+                  </li>
+                </ul>
               </footer>
             </li>
           ))}
