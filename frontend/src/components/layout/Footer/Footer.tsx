@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="text-center text-gray-800 bg-blue-100 font-semibold flex justify-center py-4 px-2 md:py-5 md:px-6">
+    <footer className="text-center text-gray-800 bg-white font-semibold flex justify-center py-4 px-2 md:py-5 md:px-6 drop-shadow-2xl">
       <p>
         © 2025 · Desarrollado por{" "}
         <a

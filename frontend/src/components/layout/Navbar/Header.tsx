@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-blue-100 font-semibold text-lg sm:text-xl flex justify-between py-4 px-2 md:py-5 md:px-6">
+    <header className="bg-white font-semibold text-lg sm:text-xl flex justify-between py-4 px-2 md:py-5 md:px-6 drop-shadow-xl">
       <Link
         className="hover:text-blue-600 transition-colors duration-300"
         to="/"
