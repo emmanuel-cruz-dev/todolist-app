@@ -72,7 +72,6 @@ export default function TaskList() {
       ) : (
         <p className="text-center text-lg">No hay tareas.</p>
       )}
-      {/* <div>{JSON.stringify(tasks)}</div> */}
     </article>
   );
 }
