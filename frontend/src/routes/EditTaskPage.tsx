@@ -33,22 +33,10 @@ function EditTaskPage() {
   return (
     <main className="container">
       <article className="flex flex-col items-center py-4 w-full">
-        <header className="w-2/3 py-4">
+        <header className="py-4">
           <h1 className="text-3xl mb-4 font-semibold">Editar tarea</h1>
         </header>
         <TaskForm task={task} onSave={handleSave} />
-        {/* <article className="w-2/3">
-          <h3 className="text-xl mb-4">{task?.title}</h3>
-          <p>{task?.description}</p>
-          <p>
-            Estado:{" "}
-            {task?.completed === false ? (
-              <span>Incompleta</span>
-            ) : (
-              <span>Completa</span>
-            )}
-          </p>
-        </article> */}
       </article>
     </main>
   );

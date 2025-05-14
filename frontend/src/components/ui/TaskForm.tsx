@@ -13,29 +13,31 @@ function TaskForm({ task, onSave }: TaskFormProps) {
   };
 
   return (
-    <form className="flex flex-col gap-4 w-2/5" onSubmit={handleSubmit}>
+    <form
+      className="bg-white p-6 rounded-2xl flex flex-col gap-4 w-2/5 mb-4"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col">
-        <label>Título:</label>
+        <label className="font-semibold text-lg">Título:</label>
         <input
-          className="bg-white rounded-lg p-2 mt-2"
+          className="bg-gray-100 rounded-lg p-2 mt-2"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Agrega un título"
         />
       </div>
       <div className="flex flex-col">
-        <label>Descripción:</label>
+        <label className="font-semibold text-lg">Descripción:</label>
         <textarea
-          className="bg-white rounded-lg p-2 mt-2"
+          className="bg-gray-100 rounded-lg p-2 mt-2"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Agrega una descripción"
         />
       </div>
       {task && (
-        <div className="flex justify-between items-center">
-          <p>
-            Estado:{" "}
+        <div className="flex justify-between items-center my-3">
+          <p className="[&>span]:bg-gray-100 [&>span]:p-2 [&>span]:rounded-lg  [&>span]:font-medium">
             {task?.completed === false ? (
               <span>Incompleta</span>
             ) : (
@@ -56,7 +58,10 @@ function TaskForm({ task, onSave }: TaskFormProps) {
           </div>
         </div>
       )}
-      <button className="btn bg-blue-600 hover:bg-blue-800" type="submit">
+      <button
+        className="btn bg-blue-600 hover:bg-blue-800 text-white"
+        type="submit"
+      >
         Guardar cambios
       </button>
     </form>
