@@ -13,7 +13,9 @@ function Header() {
       <nav>
         <ul className="flex gap-6 [&>li>a]:hover:text-blue-600 [&>li>a]:transition-colors [&>li>a]:duration-300">
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/" title="Home">
+              Inicio
+            </Link>
           </li>
         </ul>
       </nav>
