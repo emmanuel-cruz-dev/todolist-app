@@ -8,7 +8,6 @@ function TaskForm({ task, onSave }: TaskFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     onSave({ title, description, completed });
   };
 
