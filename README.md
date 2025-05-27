@@ -3,7 +3,7 @@
 Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express.
 Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos).
 
-📁 Estructura del proyecto
+## 📁 Estructura del proyecto
    ```bash
    my-todo-app/
    │
@@ -12,7 +12,7 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
    └── README.md
    ```
 
-🚀 Cómo ejecutar la aplicación localmente
+## 🚀 Cómo ejecutar la aplicación localmente
 
 1. Clonar el repositorio
 
@@ -56,16 +56,15 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
    npm run dev
    ```
 
-📌 Funcionalidades
-Ver todas las tareas
-Crear nueva tarea
-Editar tarea existente
-Eliminar tarea
-Lógica separada por componentes y hooks
-Comunicación entre frontend y backend usando fetch
+## 📌 Funcionalidades  
+- Ver todas las tareas  
+- Crear nueva tarea  
+- Editar tarea existente  
+- Eliminar tarea  
+- Lógica separada por componentes y hooks  
+- Comunicación entre frontend y backend usando fetch
 
-🛠️ Tecnologías
-
+## 🛠️ Tecnologías  
 - React + Vite
 - React Router
 - TypeScript
