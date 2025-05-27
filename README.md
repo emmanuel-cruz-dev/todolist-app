@@ -44,13 +44,17 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
    VITE_API_URL=http://localhost:3000/api/tasks
    ```
 
-4. Ejecutar la app
+4. Ejecutar la app  
    Primero el backend:
+   ```bash
    cd backend
    npm run dev
+   ```
    Luego el frontend:
+   ```bash
    cd ../frontend
    npm run dev
+   ```
 
 📌 Funcionalidades
 Ver todas las tareas
