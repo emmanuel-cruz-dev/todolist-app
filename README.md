@@ -4,21 +4,22 @@ Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express.
 Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos).
 
 📁 Estructura del proyecto
-
-my-todo-app/
-│
-├── backend/ # Servidor Express (Node.js)
-├── frontend/ # Aplicación React con Vite
-└── README.md
+   ```bash
+   my-todo-app/
+   │
+   ├── backend/ # Servidor Express (Node.js)
+   ├── frontend/ # Aplicación React con Vite
+   └── README.md
+   ```
 
 🚀 Cómo ejecutar la aplicación localmente
 
 1. Clonar el repositorio
 
-```bash
-git clone https://github.com/emmanuel-cruz-dev/todolist-app.git
-cd mi-todo-app
-```
+   ```bash
+   git clone https://github.com/emmanuel-cruz-dev/todolist-app.git
+   cd mi-todo-app
+   ```
 
 2. Instalar dependencias
    Backend:
