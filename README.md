@@ -34,13 +34,15 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
    npm install
    ```
 
-3. Configurar variables de entorno
+3. Configurar variables de entorno  
    En el backend (backend/.env):
-   env
+   ```bash
    PORT=3000
+   ```
    En el frontend (frontend/.env):
-
-VITE_API_URL=http://localhost:3000/api/tasks
+   ```bash
+   VITE_API_URL=http://localhost:3000/api/tasks
+   ```
 
 4. Ejecutar la app
    Primero el backend:
