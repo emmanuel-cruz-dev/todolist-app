@@ -21,16 +21,18 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
    cd mi-todo-app
    ```
 
-2. Instalar dependencias
+2. Instalar dependencias  
    Backend:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-cd backend
-npm install
-
-Frontend:
-
-cd ../frontend
-npm install
+   Frontend:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
 3. Configurar variables de entorno
    En el backend (backend/.env):
