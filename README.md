@@ -15,8 +15,10 @@ my-todo-app/
 
 1. Clonar el repositorio
 
-git clone https://github.com/tu-usuario/mi-todo-app.git
+```bash
+git clone https://github.com/emmanuel-cruz-dev/todolist-app.git
 cd mi-todo-app
+```
 
 2. Instalar dependencias
    Backend:
