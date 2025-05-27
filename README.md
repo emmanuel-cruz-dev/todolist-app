@@ -1,4 +1,4 @@
-📝 To-Do App – Full Stack
+# 📝 To-Do App – Full Stack
 
 Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express.
 Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos).
