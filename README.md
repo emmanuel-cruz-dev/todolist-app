@@ -71,3 +71,6 @@ Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un ar
 - Node.js
 - Express
 - Tailwind CSS
+
+## 🚧 Estado
+En desarrollo
