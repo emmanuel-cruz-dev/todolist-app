@@ -1,19 +1,8 @@
-import { useEffect, useState } from "react";
-import type { Task } from "../../types/types";
 import { Link } from "react-router-dom";
-import { deleteTask, getTasks } from "../../services/api";
+import { useTaskList } from "../../hooks/useTaskList";
 
 export default function TaskList() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  useEffect(() => {
-    getTasks().then(setTasks).catch(console.error);
-  }, []);
-
-  const handleDelete = (id: string) => {
-    deleteTask(id);
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
-  };
+  const { tasks, handleDelete } = useTaskList();
 
   return (
     <article className="w-11/12 lg:w-3/4 mb-6">
