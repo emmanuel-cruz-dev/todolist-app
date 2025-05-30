@@ -1,63 +1,76 @@
-📝 To-Do App – Full Stack
+# 📝 To-Do App – Full Stack
 
 Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express.
 Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos).
 
-📁 Estructura del proyecto
+## 📁 Estructura del proyecto
+   ```bash
+   my-todo-app/
+   │
+   ├── backend/ # Servidor Express (Node.js)
+   ├── frontend/ # Aplicación React con Vite
+   └── README.md
+   ```
 
-my-todo-app/
-│
-├── backend/ # Servidor Express (Node.js)
-├── frontend/ # Aplicación React con Vite
-└── README.md
-
-🚀 Cómo ejecutar la aplicación localmente
+## 🚀 Cómo ejecutar la aplicación localmente
 
 1. Clonar el repositorio
 
-git clone https://github.com/tu-usuario/mi-todo-app.git
-cd mi-todo-app
+   ```bash
+   git clone https://github.com/emmanuel-cruz-dev/todolist-app.git
+   cd mi-todo-app
+   ```
 
-2. Instalar dependencias
+2. Instalar dependencias  
    Backend:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-cd backend
-npm install
+   Frontend:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-Frontend:
-
-cd ../frontend
-npm install
-
-3. Configurar variables de entorno
+3. Configurar variables de entorno  
    En el backend (backend/.env):
-   env
+   ```bash
    PORT=3000
+   ```
    En el frontend (frontend/.env):
+   ```bash
+   VITE_API_URL=http://localhost:3000/api/tasks
+   ```
 
-VITE_API_URL=http://localhost:3000/api/tasks
-
-4. Ejecutar la app
+4. Ejecutar la app  
    Primero el backend:
+   ```bash
    cd backend
    npm run dev
+   ```
    Luego el frontend:
+   ```bash
    cd ../frontend
    npm run dev
+   ```
 
-📌 Funcionalidades
-Ver todas las tareas
-Crear nueva tarea
-Editar tarea existente
-Eliminar tarea
-Lógica separada por componentes y hooks
-Comunicación entre frontend y backend usando fetch
+## 📌 Funcionalidades  
+- Ver todas las tareas  
+- Crear nueva tarea  
+- Editar tarea existente  
+- Eliminar tarea  
+- Lógica separada por componentes y hooks  
+- Comunicación entre frontend y backend usando fetch
 
-🛠️ Tecnologías
-
+## 🛠️ Tecnologías  
 - React + Vite
 - React Router
 - TypeScript
 - Node.js
 - Express
 - Tailwind CSS
+
+## 🚧 Estado
+En desarrollo
