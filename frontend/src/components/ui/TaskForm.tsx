@@ -8,7 +8,17 @@ function TaskForm({ task, onSave }: TaskFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave({ title, description, completed });
+
+    if (title && description) {
+      onSave({
+        id: task?.id || "",
+        title,
+        description,
+        completed,
+      });
+    } else {
+      console.error("Title and description are required.");
+    }
   };
 
   return (
