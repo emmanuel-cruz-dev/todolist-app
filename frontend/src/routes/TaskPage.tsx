@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { Task } from "../types/types";
+import { useTaskPage } from "../hooks/useTaskPage";
 
 function TaskPage() {
   const { id } = useParams();
-  const [task, setTask] = useState<Task | null>(null);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/api/tasks/${id}`)
-      .then((res) => res.json())
-      .then((data) => setTask(data))
-      .catch((err) => console.error(err));
-  }, []);
+  const { task } = useTaskPage(id || "");
 
   return (
     <main className="container">
