@@ -1,25 +1,16 @@
-import { useState } from "react";
+import { useTaskForm } from "../../hooks/useTaskForm";
 import type { TaskFormProps } from "../../types/types";
 
 function TaskForm({ task, onSave }: TaskFormProps) {
-  const [title, setTitle] = useState(task?.title || "");
-  const [description, setDescription] = useState(task?.description);
-  const [completed, setCompleted] = useState(task?.completed || false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (title && description) {
-      onSave({
-        id: task?.id || "",
-        title,
-        description,
-        completed,
-      });
-    } else {
-      console.error("Title and description are required.");
-    }
-  };
+  const {
+    title,
+    setTitle,
+    description,
+    setDescription,
+    completed,
+    setCompleted,
+    handleSubmit,
+  } = useTaskForm({ task, onSave });
 
   return (
     <form
