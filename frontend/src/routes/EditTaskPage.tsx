@@ -26,6 +26,20 @@ function EditTaskPage() {
   const handleSave = (updatedTask: Task) => {
     setTask(updatedTask);
     navigate("/");
+    // console.log("Task updated:", updatedTask);
+    // Aquí podrías hacer una llamada a la API para guardar los cambios
+    fetch(`http://localhost:3000/api/tasks/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedTask),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log("Tarea actualizada", data);
+        navigate(`/task/${data.id}`);
+      });
   };
 
   if (!task) return <p>Cargando...</p>;
