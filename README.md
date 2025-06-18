@@ -1,7 +1,6 @@
 # 📝 To-Do List App – Full Stack
 
-Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express.
-Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos).
+Aplicación de lista de tareas desarrollada con React, Vite, Node.js y Express. Permite crear, editar, eliminar y listar tareas. Los datos se almacenan en un array en memoria (sin base de datos). Este proyecto fue desarrollado como parte del curso Fullstack de **Academia ForIT**.
 
 ## 📁 Estructura del proyecto
 
